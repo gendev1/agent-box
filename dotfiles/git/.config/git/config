@@ -1,0 +1,43 @@
+# Your name and email go in ~/.gitconfig.local (not in the repo):
+#   [user]
+#       name = ...
+#       email = ...
+# Most defaults below are from Omarchy (MIT, see LICENSE-omarchy).
+[include]
+	path = ~/.gitconfig.local
+[init]
+	defaultBranch = main
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	line-numbers = true
+	syntax-theme = tokyonight_night
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+[pull]
+	rebase = true            # rebase instead of merge on pull
+[push]
+	autoSetupRemote = true   # first push needs no -u
+[diff]
+	algorithm = histogram    # clearer diffs on moved or edited lines
+	colorMoved = plain       # highlight moved blocks
+	mnemonicPrefix = true
+[merge]
+	conflictStyle = zdiff3
+[commit]
+	verbose = true           # show the diff in the commit message editor
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate    # most recent branches first
+[tag]
+	sort = -version:refname  # v1.10 after v1.9
+[rerere]
+	enabled = true           # remember how you resolved a conflict
+	autoupdate = true

@@ -1,0 +1,41 @@
+# A quiet prompt in Tokyo Night colors: directory, git, Go version, slow-command time.
+format = "$directory$git_branch$git_status$golang$cmd_duration$line_break$character"
+add_newline = true
+palette = "tokyonight"
+
+[palettes.tokyonight]
+fg = "#c0caf5"
+blue = "#7aa2f7"
+magenta = "#bb9af7"
+muted = "#565f89"
+green = "#9ece6a"
+red = "#f7768e"
+yellow = "#e0af68"
+
+[directory]
+style = "bold blue"
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+symbol = "\ue0a0 "
+style = "magenta"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "yellow"
+format = "([$all_status$ahead_behind]($style) )"
+
+[golang]
+symbol = "\ue627 "
+style = "muted"
+format = "[$symbol$version]($style) "
+
+[cmd_duration]
+min_time = 2000
+style = "muted"
+format = "[$duration]($style) "
+
+[character]
+success_symbol = "[❯](blue)"
+error_symbol = "[❯](red)"
